@@ -1,0 +1,45 @@
+[book]
+authors = ["Site 14 Contributors"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Site-14 Development Wiki"
+description = "Tutorial & reference for all Site 14 projects."
+
+[preprocessor.mermaid]
+
+[preprocessor.admonish]
+assets_version = "3.0.1" # do not edit: managed by `mdbook-admonish install`
+command = "mdbook-admonish"
+
+[preprocessor.emojicodes]
+
+[preprocessor.template]
+before = ["mermaid","admonish","emojicodes"] # templates can include these so we run this first
+
+[output.html]
+additional-js = ['scripts/mermaid.min.js', 'scripts/mermaid-init.js', 'scripts/nav-additions.js']
+additional-css = ['theme/compiled/ss14.css']
+default-theme = "navy"
+preferred-dark-theme = "navy"
+
+git-repository-url = "https://github.com/Foundation-Site-14/Site-14"
+edit-url-template = "https://github.com/Foundation-Site-14/Site-14-docs/blob/master/{path}"
+
+mathjax-support = true
+smart-punctuation = true
+no-section-label = true
+
+[output.html.print]
+enable = false
+
+[output.html.fold]
+enable = true
+level = 1
+
+[output.html.playground]
+runnable = false # sorry we arent rustpilled :(
+
+[output.linkcheck]
+traverse-parent-directories = false
+warning-policy = "ignore" # false-positives like hell with absolute links & latex, so.. cant do
